@@ -10,7 +10,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace Platformer2D
+namespace Platformer2DGameLibrary
 {
     /// <summary>
     /// Represents a 2D circle.

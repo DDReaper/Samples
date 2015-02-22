@@ -9,7 +9,7 @@
 
 using Microsoft.Xna.Framework.Input.Touch;
 
-namespace Platformer2D
+namespace Platformer2DGameLibrary
 {
     /// <summary>
     /// Provides extension methods for the TouchCollection type.

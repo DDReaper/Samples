@@ -11,7 +11,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Platformer2D
+namespace Platformer2DGameLibrary
 {
     /// <summary>
     /// Controls playback of an Animation.

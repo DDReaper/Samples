@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
 
-namespace Platformer2D
+namespace Platformer2DGameLibrary
 {
     /// <summary>
     /// A valuable item the player can collect.

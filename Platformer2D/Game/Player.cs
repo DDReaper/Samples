@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Platformer2D
+namespace Platformer2DGameLibrary
 {
     /// <summary>
     /// Our fearless adventurer!
@@ -176,10 +176,9 @@ namespace Platformer2D
             GameTime gameTime, 
             KeyboardState keyboardState, 
             GamePadState gamePadState, 
-            AccelerometerState accelState,
             DisplayOrientation orientation)
         {
-            GetInput(keyboardState, gamePadState, accelState, orientation);
+            GetInput(keyboardState, gamePadState, orientation);
 
             ApplyPhysics(gameTime);
 
@@ -206,7 +205,6 @@ namespace Platformer2D
         private void GetInput(
             KeyboardState keyboardState, 
             GamePadState gamePadState,
-            AccelerometerState accelState, 
             DisplayOrientation orientation)
         {
             // Get analog horizontal movement.
@@ -215,17 +213,6 @@ namespace Platformer2D
             // Ignore small movements to prevent running in place.
             if (Math.Abs(movement) < 0.5f)
                 movement = 0.0f;
-
-            // Move the player with accelerometer
-            if (Math.Abs(accelState.Acceleration.Y) > 0.10f)
-            {
-                // set our movement speed
-                movement = MathHelper.Clamp(-accelState.Acceleration.Y * AccelerometerScale, -1f, 1f);
-
-                // if we're in the LandscapeLeft orientation, we must reverse our movement
-                if (orientation == DisplayOrientation.LandscapeRight)
-                    movement = -movement;
-            }
 
             // If any digital horizontal movement input is found, override the analog movement.
             if (gamePadState.IsButtonDown(Buttons.DPadLeft) ||

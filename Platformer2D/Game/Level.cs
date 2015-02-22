@@ -16,7 +16,7 @@ using Microsoft.Xna.Framework.Audio;
 using System.IO;
 using Microsoft.Xna.Framework.Input;
 
-namespace Platformer2D
+namespace Platformer2DGameLibrary
 {
     /// <summary>
     /// A uniform grid of tiles with collections of gems and enemies.
@@ -375,7 +375,6 @@ namespace Platformer2D
             GameTime gameTime, 
             KeyboardState keyboardState, 
             GamePadState gamePadState, 
-            AccelerometerState accelState,
             DisplayOrientation orientation)
         {
             // Pause while the player is dead or time is expired.
@@ -395,7 +394,7 @@ namespace Platformer2D
             else
             {
                 timeRemaining -= gameTime.ElapsedGameTime;
-                Player.Update(gameTime, keyboardState, gamePadState, accelState, orientation);
+                Player.Update(gameTime, keyboardState, gamePadState, orientation);
                 UpdateGems(gameTime);
 
                 // Falling off the bottom of the level kills the player.
